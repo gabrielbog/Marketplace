@@ -1,0 +1,29 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>View All Products</h1>
+
+  <div class="oj-flex oj-sm-flex-items-1">
+    <div class="oj-flex-item oj-panel oj-sm-padding-2x-horizontal">
+      <div class="oj-typography-heading-md oj-header-border">Products</div>
+      <oj-list-view data="[[dataProvider]]" selection-mode="single"
+        selection="{{selection}}">
+        <template slot="itemTemplate" data-oj-as="item">
+          <strong>
+            <oj-bind-text value="[[item.data.name]]"></oj-bind-text>
+          </strong>
+          <div>
+            <oj-bind-text value="[[item.data.category]]"></oj-bind-text>
+          </div>
+        </template>
+      </oj-list-view>
+    </div>
+    <div class="oj-flex-item oj-panel oj-sm-padding-2x-horizontal">
+      <div class="oj-typography-heading-md oj-header-border">Details</div>
+      <oj-module config="[[module.koObservableConfig]]"></oj-module>
+    </div>
+  </div>
+</div>

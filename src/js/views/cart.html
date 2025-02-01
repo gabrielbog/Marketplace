@@ -1,0 +1,78 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Product Cart</h1>
+
+  <div class="oj-flex demo-flex-display oj-panel oj-bg-info-30">
+    <div class="oj-flex-item oj-panel oj-bg-info-30">
+      <oj-validation-group valid="{{groupValid}}">
+        <oj-form-layout>
+          <oj-combobox-one
+            id="combobox3"
+            value="{{inputProductId}}"
+            options="[[productProvider]]"
+            label-hint="Product"
+            label-edge="inside"
+            class="oj-form-control-max-width-md">
+          </oj-combobox-one>
+        </oj-form-layout>
+        <oj-toolbar chroming="outlined">
+          <oj-button id="addbutton" on-oj-action="[[addRow]]" disabled="[[disableCreate]]">
+            Create
+          </oj-button>
+          <oj-button
+            id="updateButton"
+            on-oj-action="[[updateRow]]"
+            disabled="[[disableRemoveUpdate]]">
+            Update
+          </oj-button>
+          <oj-button
+            id="removeButton"
+            on-oj-action="[[removeRow]]"
+            disabled="[[disableRemoveUpdate]]">
+            Remove
+          </oj-button>
+          <oj-button
+            id="removeAllButton"
+            on-oj-action="[[removeAllRow]]"
+            disabled="[[isEmptyTable]]">
+            Remove All
+          </oj-button>
+        </oj-toolbar>
+      </oj-validation-group>
+      <div class="oj-flex oj-panel oj-bg-info-30">
+        <div class="oj-flex-item">
+          <div>Total price:</div>
+          <span>
+            <oj-bind-text value="[[totalPrice]]"></oj-bind-text>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="oj-flex-item oj-panel oj-bg-info-30 oj-sm-padding-2x-horizontal" id="tableContainer">
+      <oj-table
+        id="table"
+        aria-label="Cart Table"
+        accessibility.row-header="name"
+        class="demo-table-container oj-helper-text-align-center"
+        style="height: 100%; width: 100%;"
+        data="[[dataprovider]]"
+        columns='[{"headerText": "Id", "field": "id"},
+                  {"headerText": "Name", "field": "name"},
+                  {"headerText": "Price", "field": "price"},
+                  {"headerText": "Quantity", "field": "quantity"}]'
+        selection-mode.row="single"
+        first-selected-row="{{firstSelected}}"
+        on-first-selected-row-changed="[[firstSelectedRowChangedListener]]"></oj-table>
+      <div class="oj-flex demo-table-container oj-helper-text-align-center oj-sm-hide" id="noDataDiv">
+        <div class="oj-flex-item oj-sm-align-self-center">
+          <span>No data available. Please use the form controls to create a new row.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

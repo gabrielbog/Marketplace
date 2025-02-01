@@ -1,0 +1,46 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Seller Statistics</h1>
+
+  <div class="oj-flex oj-panel oj-bg-info-30">
+    <div class="oj-flex-item oj-panel oj-bg-info-30 oj-sm-padding-2x-horizontal" id="tableContainer">
+      <oj-table
+        id="table"
+        aria-label="Seller Table"
+        accessibility.row-header="depName"
+        class="demo-table-container oj-helper-text-align-center"
+        style="height: 100%; width: 100%;"
+        data="[[dataprovider]]"
+        columns='[{"headerText": "Seller Id", "field": "id"},
+                  {"headerText": "Seller Name", "field": "name"},
+                  {"headerText": "Seller Origin", "field": "origin"}]'
+        selection-mode='{"row": "single"}'
+        dnd.drag.rows.data-types='["application/ojtablerows+json"]'>
+      </oj-table>
+      <div
+        id="noDataDiv"
+        class="oj-flex demo-table-container oj-helper-text-align-center oj-sm-hide">
+        <div class="oj-flex-item oj-sm-align-self-center">
+          <span>No data available.</span>
+        </div>
+      </div>
+    </div>
+    <div class="oj-flex-item oj-panel oj-bg-info-30">
+      <oj-chart
+        id="barChart"
+        on-keydown="[[handleKey]]"
+        type="pie"
+        series="[[barSeriesValue]]"
+        groups="[[barGroupsValue]]"
+        animation-on-display="auto"
+        animation-on-data-change="auto"
+        dnd.drop.plot-area.data-types='["application/ojtablerows+json"]'
+        dnd.drop.plot-area.drop="[[handleDrop]]">
+      </oj-chart>
+    </div>
+  </div>
+</div>

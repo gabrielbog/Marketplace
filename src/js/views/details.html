@@ -1,0 +1,34 @@
+<div class="oj-hybrid-padding">
+  <oj-bind-if test="[[record]]">
+    <oj-form-layout readonly="true" direction="row">
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+          <h3>Product Details</h3>
+          <oj-text-area label-hint="Product Name" value="[[record().name]]"></oj-text-area>
+          <oj-text-area label-hint="Category" value="[[record().category]]"></oj-text-area>
+          <oj-input-text label-hint="Seller" value="[[record().seller]]"></oj-text-area>
+        </div>
+
+        <div class="oj-flex-item">
+          <h3>More Information</h3>
+          <oj-text-area label-hint="Description" value="[[record().description]]"></oj-text-area>
+          <oj-text-area label-hint="Price" value="[[priceListing]]"></oj-text-area>
+        </div>
+
+        <div class="oj-flex-item">
+          <h3>Price Chart</h3>
+          <oj-chart id="barChart"
+            type="bar"
+            orientation="vertical"
+            stack="off"
+            series="[[barSeriesValue]]"
+            groups="[[barGroupsValue]]"
+            animation-on-display="auto"
+            animation-on-data-change="auto"
+            hover-behavior="dim">
+          </oj-chart>
+        </div>
+      </div>
+    </oj-form-layout>
+  </oj-bind-if>
+</div>

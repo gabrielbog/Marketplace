@@ -1,0 +1,104 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Create Product</h1>
+
+  <div class="oj-flex oj-panel oj-bg-info-30">
+    <div class="oj-flex-item oj-panel oj-bg-info-30">
+      <oj-validation-group valid="{{groupValid}}">
+        <oj-form-layout>
+          <oj-input-number
+            id="productIdInput"
+            max="2000"
+            min="0"
+            label-hint="Product Id"
+            value="{{inputProductId}}"
+            converter="[[converter]]"></oj-input-number>
+          <oj-input-text
+            id="productSellerInput"
+            label-hint="Product Seller"
+            value="{{inputProductSeller}}"></oj-input-text>
+          <oj-input-text
+            id="productNameInput"
+            label-hint="Product Name"
+            value="{{inputProductName}}"></oj-input-text>
+          <oj-input-text
+            id="productCategoryInput"
+            label-hint="Product Category"
+            value="{{inputProductCategory}}"></oj-input-text>
+          <oj-input-number
+            id="productPriceInput"
+            label-hint="Product Price"
+            max="999999"
+            min="0"
+            value="{{inputProductPrice}}"
+            converter="[[converter]]"></oj-input-number>
+          <oj-input-number
+            id="totalSoldInput"
+            label-hint="Total Sold"
+            min="0"
+            value="{{inputTotalSold}}"
+            converter="[[converter]]"></oj-input-number>
+        </oj-form-layout>
+        <oj-toolbar chroming="outlined">
+          <oj-button id="addbutton" on-oj-action="[[addRow]]" disabled="[[disableCreate]]">
+            Create
+          </oj-button>
+          <oj-button
+            id="updateButton"
+            on-oj-action="[[updateRow]]"
+            disabled="[[disableRemoveUpdate]]">
+            Update
+          </oj-button>
+          <oj-button
+            id="removeButton"
+            on-oj-action="[[removeRow]]"
+            disabled="[[disableRemoveUpdate]]">
+            Remove
+          </oj-button>
+          <oj-button
+            id="removeAllButton"
+            on-oj-action="[[removeAllRow]]"
+            disabled="[[isEmptyTable]]">
+            Remove All
+          </oj-button>
+        </oj-toolbar>
+      </oj-validation-group>
+    </div>
+    <div id="tableContainer" class="oj-flex-item oj-panel oj-bg-info-30 oj-sm-padding-2x-horizontal">
+      <oj-table
+        id="table"
+        aria-label="Product Table"
+        accessibility.row-header="name"
+        class="demo-table-container oj-helper-text-align-center"
+        data="[[dataprovider]]"
+        columns='[{"headerText": "Product Id", "field": "id"},
+                  {"headerText": "Product Seller", "field": "seller"},
+                  {"headerText": "Product Name", "field": "name"},
+                  {"headerText": "Product Category", "field": "category"},
+                  {"headerText": "Product Price", "field": "price"},
+                  {"headerText": "Total Sold", "field": "total_sold"}]'
+        selection-mode.row="single"
+        first-selected-row="{{firstSelected}}"
+        on-first-selected-row-changed="[[firstSelectedRowChangedListener]]"></oj-table>
+      <div
+        id="noDataDiv"
+        class="oj-flex demo-table-container oj-helper-text-align-center oj-sm-hide">
+        <div class="oj-flex-item oj-sm-align-self-center">
+          <span>No data available. Please use the form controls to create a new row.</span>
+        </div>
+      </div>
+      <oj-toolbar chroming="outlined">
+        <oj-button id="resetButton" on-oj-action="[[resetRows]]" disabled="[[disableSubmit]]">
+          Reset Changes
+        </oj-button>
+        <oj-button id="submitButton" on-oj-action="[[submitRows]]" disabled="[[disableSubmit]]">
+          Submit Changes
+        </oj-button>
+      </oj-toolbar>
+    </div>
+  </div>
+</div>

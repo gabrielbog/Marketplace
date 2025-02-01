@@ -1,0 +1,137 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "seller": "Vanzator Dulciuri",
+            "name": "Ciocolata",
+            "description": "Ciocolata cu lapte, placerea tuturor.",
+            "category": "food",
+            "price": 5,
+            "price_history": [
+                {"year": "2022", "value": 3},
+                {"year": "2023", "value": 4}
+            ],
+            "total_sold": 15000000
+        },
+        {
+            "id": 2,
+            "seller": "Vanzator Jucarii",
+            "name": "Robot",
+            "description": "Robot masina potrivit pentru copilul tau.",
+            "category": "toys",
+            "price": 30,
+            "price_history": [
+                {"year": "2022", "value": 25},
+                {"year": "2023", "value": 30}
+            ],
+            "total_sold": 100000
+        },
+        {
+            "id": 3,
+            "seller": "Vanzator Mancare",
+            "name": "Lasagna",
+            "description": "Lasagna la caserola, incalzire microunde.",
+            "category": "food",
+            "price": 15,
+            "price_history": [
+                {"year": "2023", "value": 10}
+            ],
+            "total_sold": 1000000
+        },
+        {
+            "id": 4,
+            "seller": "Vanzator Piese",
+            "name": "Catalizator Masina",
+            "description": "Catalizator nou pentru masini diesel.",
+            "category": "cars",
+            "price": 300,
+            "price_history": [
+                {"year": "2023", "value": 400}
+            ],
+            "total_sold": 2500
+        },
+        {
+            "id": 5,
+            "seller": "Vanzator Haine",
+            "name": "Sneakers",
+            "description": "Sneakers inaltime ridicata, talpa cu perna de aer.",
+            "category": "clothes",
+            "price": 650,
+            "price_history": [
+                {"year": "2021", "value": 550},
+                {"year": "2022", "value": 350},
+                {"year": "2023", "value": 800}
+            ],
+            "total_sold": 25000
+        },
+        {
+            "id": 6,
+            "seller": "Vanzator Telefoane",
+            "name": "Telefon",
+            "description": "Cel mai nou telefon din gama!",
+            "category": "phones",
+            "price": 3000,
+            "price_history": [],
+            "total_sold": 100000
+        },
+        {
+            "id": 7,
+            "seller": "Vanzator Piese Calculatoare",
+            "name": "Placa Video",
+            "description": "Placa video pentru jocuri la calitate ridicata si randare 3D.",
+            "category": "comp-parts",
+            "price": 5000,
+            "price_history": [
+                {"year": "2023", "value": 3500}
+            ],
+            "total_sold": 240000
+        },
+        {
+            "id": 8,
+            "seller": "Vanzator Piese Calculatoare",
+            "name": "Procesor",
+            "description": "Cel mai puternic procesor de pe piata pentru calcule matematice complexe.",
+            "category": "comp-parts",
+            "price": 1500,
+            "price_history": [],
+            "total_sold": 45000
+        }
+    ],
+    "sellers": [
+        {
+            "id": 1,
+            "name": "Vanzator Dulciuri",
+            "origin": "Turcia"
+        },
+        {
+            "id": 2,
+            "name": "Vanzator Jucarii",
+            "origin": "Romania"
+        },
+        {
+            "id": 3,
+            "name": "Vanzator Mancare",
+            "origin": "Germania"
+        },
+        {
+            "id": 4,
+            "name": "Vanzator Piese",
+            "origin": "Romania"
+        },
+        {
+            "id": 5,
+            "name": "Vanzator Haine",
+            "origin": "Franta"
+        },
+        {
+            "id": 6,
+            "name": "Vanzator Telefoane",
+            "origin": "Coreea de Sud"
+        },
+        {
+            "id": 7,
+            "name": "Vanzator Piese Calculatoare",
+            "origin": "America"
+        }
+    ]
+}
